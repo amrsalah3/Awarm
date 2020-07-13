@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#7e57c2"
+    android:gravity="center_horizontal">
+
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/corners"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/container_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/days_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/first_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <CheckBox
+                        android:id="@+id/sat_cb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:buttonTint="#fafafa"
+                        android:fontFamily="monospace"
+                        android:text="Sat"
+                        android:textColor="#fafafa" />
+
+                    <CheckBox
+                        android:id="@+id/sun_cb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:buttonTint="#fafafa"
+                        android:fontFamily="monospace"
+                        android:text="Sun"
+
+
+                        android:textColor="#fafafa" />
+
+                    <CheckBox
+                        android:id="@+id/mon_cb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:buttonTint="#fafafa"
+                        android:fontFamily="monospace"
+                        android:text="Mon"
+                        android:textColor="#fafafa" />
+
+                    <CheckBox
+                        android:id="@+id/tue_cb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp"
+                        android:buttonTint="#fafafa"
+                        android:fontFamily="monospace"
+                        android:text="Tue"
+                        android:textColor="#fafafa"
+
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/second_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp">
+
+                    <CheckBox
+                        android:id="@+id/wed_cb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#fafafa"
+                        android:fontFamily="monospace"
+                        android:text="Wed"
+                        android:textColor="#fafafa" />
+
+                    <CheckBox
+                        android:id="@+id/thu_cb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/tue_cb"
+                        android:buttonTint="#fafafa"
+                        android:fontFamily="monospace"
+                        android:text="Thu"
+                        android:textColor="#fafafa" />
+
+                    <CheckBox
+                        android:id="@+id/fri_cb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/tue_cb"
+                        android:buttonTint="#fafafa"
+                        android:fontFamily="monospace"
+                        android:text="Fri"
+                        android:textColor="#fafafa" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TimePicker
+                android:id="@+id/time_picker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="5dp" />
+
+            <TextView
+                android:id="@+id/remaining_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="10dp"
+                android:text="Remaining"
+                />
+
+            <Button
+                android:id="@+id/repeat_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:backgroundTint="#ae52d4"
+                android:onClick="ChooseRepetition"
+                android:text="Repeat(Never)"
+                android:textColor="#fafafa" />
+
+            <RelativeLayout
+                android:id="@+id/ringtone_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:background="@drawable/ringtonestyle"
+                android:backgroundTint="#ae52d4"
+                android:elevation="2dp"
+                android:onClick="PickRingtone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="monospace"
+                    android:text="Ringtone"
+                    android:textColor="#fafafa"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/ringtone_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:ellipsize="end"
+                    android:maxLength="25"
+                    android:text="Not selected"
+                    android:textColor="#fafafa"
+                    android:textStyle="italic" />
+
+            </RelativeLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.design.widget.FloatingActionButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ic_done"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="AlarmIsDone"
+                    />
+                <EditText
+                    android:id="@+id/label_EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_marginTop="4dp"
+                    android:hint="Label"
+                    android:textColor="#fafafa"
+                    android:maxLength="23"
+                    android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                    />
+            </FrameLayout>
+
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

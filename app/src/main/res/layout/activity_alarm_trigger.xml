@@ -1,0 +1,34 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/corners"
+    android:gravity="center_horizontal"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:text="Wake up.Now!"
+        android:padding="10sp"
+        android:textStyle="bold"/>
+    <TextView
+        android:id="@+id/alarm_showed_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:paddingHorizontal="10sp"
+        />
+    <Button
+        android:id="@+id/turnoff_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10sp"
+        android:text="TURN OFF"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#FFF93A7B"
+        />
+
+
+</LinearLayout>
