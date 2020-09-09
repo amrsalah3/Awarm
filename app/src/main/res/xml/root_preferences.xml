@@ -1,0 +1,10 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ListPreference
+        app:defaultValue="@string/Purple"
+        app:entries="@array/pref_app_theme_choices"
+        app:entryValues="@array/pref_app_theme_choices"
+        app:icon="@drawable/ic_pref_theme"
+        app:key="@string/key_pref_app_theme"
+        app:summary="@string/summary_pref_theme"
+        app:title="@string/title_pref_app_theme" />
+</PreferenceScreen>

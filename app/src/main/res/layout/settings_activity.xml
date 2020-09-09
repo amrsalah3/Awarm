@@ -1,0 +1,5 @@
+<androidx.fragment.app.FragmentContainerView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/container_settings_fragment"
+    android:name="com.narify.awarm.activities.SettingsActivity$SettingsFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" />

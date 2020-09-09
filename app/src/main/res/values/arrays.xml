@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="repeat_options">
+        <item>@string/repeat_never</item>
+        <item>@string/repeat_two_weeks</item>
+        <item>@string/repeat_three_weeks</item>
+        <item>@string/repeat_four_weeks</item>
+        <item>@string/repeat_weekly</item>
+
+    </string-array>
+
+    <string-array name="pref_app_theme_choices">
+        <item>@string/Purple</item>
+        <item>@string/Blue</item>
+        <item>@string/Orange</item>
+        <item>@string/Black</item>
+    </string-array>
+
+    <string-array name="pref_time_picker_mode_choices">
+        <item>@string/Spinner</item>
+        <item>@string/Clock</item>
+    </string-array>
+
+</resources>

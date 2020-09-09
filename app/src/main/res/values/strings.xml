@@ -1,0 +1,92 @@
+<resources>
+
+    <string name="app_name">Awarm</string>
+    <string name="title_activity_alarm_trigger">AlarmTrigger</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Days' checkboxes -->
+    <string name="sat">Sat</string>
+    <string name="sun">Sun</string>
+    <string name="mon">Mon</string>
+    <string name="tue">Tue</string>
+    <string name="wed">Wed</string>
+    <string name="thu">Thu</string>
+    <string name="fri">Fri</string>
+
+    <!-- Remaining time -->
+    <string name="alarm_remaining_time">Remaining</string>
+
+    <!-- Ringtone -->
+    <string name="ringtone">Ringtone</string>
+    <string name="pick_ringtone">Pick ringtone</string>
+    <string name="ringtone_default">Over The Horizon</string>
+    <string name="not_valid_file">Not a valid file</string>
+
+    <!-- Repeat -->
+    <string name="repeat">Repeat</string>
+    <string name="repeat_never">Never(Only this week)</string>
+    <string name="repeat_two_weeks">Two weeks</string>
+    <string name="repeat_three_weeks">Three weeks</string>
+    <string name="repeat_four_weeks">Four weeks</string>
+    <string name="repeat_weekly">Weekly</string>
+
+    <!-- Label -->
+    <string name="alarm_label">Label</string>
+    <string name="alarm_label_autofill_hints">School, Faculty, College, University, Work, Pray, Food, Breakfast</string>
+
+    <!-- Preferences -->
+    <string name="key_pref_alarm_list">alarm_list</string>
+    <string name="key_pref_app_theme">app_theme</string>
+    <string name="key_pref_time_picker_mode">time_picker</string>
+    <string name="title_pref_app_theme">App theme</string>
+    <string name="title_pref_time_picker_mode">Time Picker mode</string>
+
+    <!-- Time Picker choices (entries and values) -->
+    <string name="Spinner">Spinner</string>
+    <string name="Clock">Clock</string>
+
+
+    <!-- App Themes choices (entries and values) -->
+    <string name="Purple">Purple</string>
+    <string name="Blue">Blue</string>
+    <string name="Orange">Orange</string>
+    <string name="Black">Black</string>
+
+    <!-- Intent keys -->
+    <string name="key_intent_alarm_extra">alarm</string>
+    <string name="key_intent_request_code">requestCode</string>
+    <string name="key_pi_alarm_extra">alarm</string>
+
+    <!-- Time -->
+    <string name="alarm_clock">%d:%d</string>
+
+    <!-- Menu items -->
+    <string name="settings">Settings</string>
+
+    <!-- Remaining time -->
+    <string name="remaining_no_time_picked">Pick date and time</string>
+    <string name="remaining_day_hour_minute">%s %s %s remaining</string>
+    <plurals name="remaining_days">
+        <item quantity="one">%d Day</item>
+        <item quantity="other">%d Days</item>
+    </plurals>
+    <plurals name="remaining_hours">
+        <item quantity="one">%d Hour</item>
+        <item quantity="other">%d Hours</item>
+    </plurals>
+    <plurals name="remaining_minutes">
+        <item quantity="one">%d Minute</item>
+        <item quantity="other">%d Minutes</item>
+    </plurals>
+
+    <string name="contentDesc_delete_alarm">Delete alarm</string>
+    <string name="select_atleast_one_day">Select at least one day</string>
+    <string name="summary_pref_theme">Select app colors theme</string>
+    <string name="key_requestcode_savestate_alarmdetails">incoming_request_code</string>
+    <string name="key_uniquecode_savestate_alarmdetails">alarm_unique_code</string>
+    <string name="key_repeatid_savestate_alarmdetails">repeat_id</string>
+    <string name="key_ringtonepath_savestate_alarmdetails">ringtone_path</string>
+    <string name="swipe_up_to_dismiss">Swipe up to dismiss</string>
+
+
+</resources>

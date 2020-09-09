@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_alarm_details_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?colorPrimaryDark"
+    android:gravity="center">
+
+    <ScrollView
+        android:id="@+id/sv_alarm_details"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/corners"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="-23dp"
+        tools:layout_editor_absoluteY="-56dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <CheckBox
+                android:id="@+id/cb_sat"
+                style="@style/DayCheckBoxStyle"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="@string/sat"
+                app:layout_constraintEnd_toStartOf="@+id/cb_sun"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <CheckBox
+                android:id="@+id/cb_sun"
+                style="@style/DayCheckBoxStyle"
+                android:text="@string/sun"
+                app:layout_constraintEnd_toStartOf="@+id/cb_mon"
+                app:layout_constraintStart_toEndOf="@+id/cb_sat"
+                app:layout_constraintTop_toTopOf="@+id/cb_sat" />
+
+            <CheckBox
+                android:id="@+id/cb_mon"
+                style="@style/DayCheckBoxStyle"
+                android:text="@string/mon"
+                app:layout_constraintEnd_toStartOf="@+id/cb_tue"
+                app:layout_constraintStart_toEndOf="@+id/cb_sun"
+                app:layout_constraintTop_toTopOf="@+id/cb_sat" />
+
+            <CheckBox
+                android:id="@+id/cb_tue"
+                style="@style/DayCheckBoxStyle"
+                android:text="@string/tue"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/cb_mon"
+                app:layout_constraintTop_toTopOf="@+id/cb_sat" />
+
+            <CheckBox
+                android:id="@+id/cb_wed"
+                style="@style/DayCheckBoxStyle"
+                android:layout_marginTop="@dimen/margin_small2"
+                android:text="@string/wed"
+                app:layout_constraintEnd_toStartOf="@+id/cb_thu"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cb_sat" />
+
+            <CheckBox
+                android:id="@+id/cb_thu"
+                style="@style/DayCheckBoxStyle"
+                android:text="@string/thu"
+                app:layout_constraintEnd_toStartOf="@+id/cb_fri"
+                app:layout_constraintStart_toEndOf="@+id/cb_wed"
+                app:layout_constraintTop_toTopOf="@+id/cb_wed" />
+
+            <CheckBox
+                android:id="@+id/cb_fri"
+                style="@style/DayCheckBoxStyle"
+                android:text="@string/fri"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/cb_thu"
+                app:layout_constraintTop_toTopOf="@+id/cb_wed" />
+
+            <TimePicker
+                android:id="@+id/time_picker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cb_wed" />
+
+            <TextView
+                android:id="@+id/tv_remaining_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:freezesText="true"
+                android:saveEnabled="true"
+                android:text="@string/alarm_remaining_time"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="@+id/time_picker"
+                app:layout_constraintStart_toStartOf="@+id/time_picker"
+                app:layout_constraintTop_toBottomOf="@+id/time_picker" />
+
+            <Button
+                android:id="@+id/repeat_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-1dp"
+                android:layout_marginLeft="-1dp"
+                android:layout_marginTop="@dimen/margin_small3"
+                android:background="?colorPrimaryVariant"
+                android:elevation="3dp"
+                android:onClick="selectRepeat"
+                android:saveEnabled="true"
+                android:text="@string/repeat_never"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_remaining_time"
+                tools:targetApi="lollipop" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/ringtone_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small3"
+                android:background="?colorPrimaryVariant"
+                android:elevation="3dp"
+                android:onClick="PickRingtone"
+                android:saveEnabled="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/repeat_button"
+                tools:targetApi="lollipop">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_small3"
+                    android:layout_marginVertical="@dimen/margin_small3"
+                    android:fontFamily="monospace"
+                    android:text="@string/ringtone"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_ringtone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_small3"
+                    android:layout_marginVertical="@dimen/margin_small3"
+                    android:ellipsize="end"
+                    android:maxLength="25"
+                    android:text="@string/ringtone_default"
+                    android:textColor="@color/white"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <EditText
+                android:id="@+id/et_alarm_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/margin_small3"
+                android:autofillHints="@string/alarm_label_autofill_hints"
+                android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                android:hint="@string/alarm_label"
+                android:inputType="textShortMessage"
+                android:maxLength="23"
+                android:paddingHorizontal="@dimen/margin_small3"
+                android:textColor="@color/white"
+                android:textColorHint="#555555"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ringtone_layout" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_save_alarm_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_medium"
+        android:onClick="saveAlarm"
+        android:src="@drawable/ic_done"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

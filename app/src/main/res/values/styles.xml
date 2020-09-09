@@ -1,0 +1,99 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application themes. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimaryPurple</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkPurple</item>
+        <item name="colorAccent">@color/colorAccentPurple</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryVariantPurple</item>
+        <item name="colorControlHighlight">?colorPrimaryVariant</item>
+    </style>
+
+    <style name="AppBlueTheme" parent="AppTheme">
+        <item name="colorPrimary">@color/colorPrimaryBlue</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkBlue</item>
+        <item name="colorAccent">@color/colorAccentBlue</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryVariantBlue</item>
+        <item name="colorControlHighlight">?colorAccent</item>
+    </style>
+
+    <style name="AppOrangeTheme" parent="AppTheme">
+        <item name="colorPrimary">@color/colorPrimaryOrange</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkOrange</item>
+        <item name="colorAccent">@color/colorAccentOrange</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryVariantOrange</item>
+        <item name="colorControlHighlight">?colorAccent</item>
+    </style>
+
+    <style name="AppBlackTheme" parent="AppTheme">
+        <item name="colorPrimary">@color/colorPrimaryBlack</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkBlack</item>
+        <item name="colorAccent">@color/colorAccentBlack</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryVariantBlack</item>
+        <item name="colorControlHighlight">?colorPrimaryVariant</item>
+    </style>
+
+    <!-- AlarmDetails activity Themes for Spinner TimePicker mode -->
+    <style name="PurpleThemeSpinnerTimePicker" parent="AppTheme">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColorSecondary">@color/white</item>
+        <item name="android:timePickerStyle" tools:targetApi="lollipop">@style/SpinnerTimePicker
+        </item>
+    </style>
+
+    <style name="BlueThemeSpinnerTimePicker" parent="AppBlueTheme">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColorSecondary">@color/white</item>
+        <item name="android:timePickerStyle" tools:targetApi="lollipop">@style/SpinnerTimePicker
+        </item>
+    </style>
+
+    <style name="OrangeThemeSpinnerTimePicker" parent="AppOrangeTheme">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColorSecondary">@color/white</item>
+        <item name="android:timePickerStyle" tools:targetApi="lollipop">@style/SpinnerTimePicker
+        </item>
+    </style>
+
+    <style name="BlackThemeSpinnerTimePicker" parent="AppBlackTheme">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColorSecondary">@color/white</item>
+        <item name="android:timePickerStyle" tools:targetApi="lollipop">@style/SpinnerTimePicker
+        </item>
+    </style>
+
+    <!-- AlarmTrigger activity theme -->
+    <style name="AlarmTriggerTheme" parent="AppTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+
+    <!-- Component styles -->
+
+    <style name="DayCheckBoxStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginEnd">@dimen/margin_small2</item>
+        <item name="android:layout_marginRight">@dimen/margin_small2</item>
+        <item name="android:fontFamily">monospace</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="buttonTint">@color/white</item>
+        <item name="android:onClick">onAlarmTimingChanged</item>
+    </style>
+
+    <style name="SpinnerTimePicker" parent="android:Widget.Material.Light.TimePicker" tools:targetApi="lollipop">
+        <item name="android:timePickerMode" tools:targetApi="lollipop">spinner</item>
+    </style>
+
+    <style name="AlarmRepeatDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:textColorPrimary">@color/black</item>
+        <item name="android:textColorSecondary">@color/black</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+</resources>

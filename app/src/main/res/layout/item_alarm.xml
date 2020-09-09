@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_alarm_item_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_small2"
+    android:background="@drawable/corners"
+    android:elevation="5dp">
+
+    <CheckBox
+        android:id="@+id/cb_activate_alarm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_large"
+        app:buttonTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_alarm_clock"
+        android:layout_width="70dp"
+        android:layout_height="0dp"
+        android:gravity="end"
+        android:textColor="@color/white"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="@+id/cb_activate_alarm"
+        app:layout_constraintStart_toEndOf="@+id/cb_activate_alarm"
+        app:layout_constraintTop_toTopOf="@+id/cb_activate_alarm"
+        tools:text="07:00" />
+
+    <TextView
+        android:id="@+id/tv_alarm_AM_PM"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/margin_small2"
+        android:layout_marginLeft="@dimen/margin_small2"
+        android:gravity="bottom"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_alarm_clock"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/tv_alarm_clock"
+        app:layout_constraintTop_toTopOf="@+id/tv_alarm_clock"
+        tools:text="AM" />
+
+    <TextView
+        android:id="@+id/tv_alarm_label"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:paddingStart="@dimen/margin_small2"
+        android:paddingLeft="@dimen/margin_small2"
+        android:textColor="@color/white"
+        android:textStyle="italic|bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_alarm_AM_PM"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toEndOf="@+id/tv_alarm_AM_PM"
+        app:layout_constraintTop_toTopOf="@+id/tv_alarm_AM_PM"
+        tools:ignore="RtlSymmetry"
+        tools:text="School" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.82" />
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="@dimen/margin_small3"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/ib_delete_alarm_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:contentDescription="@string/contentDesc_delete_alarm"
+        android:src="@drawable/ic_delete_alarm_item"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
