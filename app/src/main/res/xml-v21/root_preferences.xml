@@ -14,7 +14,7 @@
         app:entryValues="@array/pref_time_picker_mode_choices"
         app:icon="@drawable/ic_pref_time_picker"
         app:key="@string/key_pref_time_picker_mode"
-        app:summary="Choose time picker as Clock or Spinner"
+        app:summary="@string/summary_pref_time_picker_mode"
         app:title="@string/title_pref_time_picker_mode" />
 
 </PreferenceScreen>

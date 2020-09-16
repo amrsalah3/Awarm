@@ -2,8 +2,8 @@ package com.narify.awarm.activities;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.view.View;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -86,7 +86,8 @@ public class AlarmDetails extends BaseActivity implements TimePicker.OnTimeChang
     private String getRingtoneName() {
         String ringtoneName;
         if (mRingtonePath != null) {
-            String uriName = FileUtils.getFileName(Uri.parse(mRingtonePath));
+            Uri ringtoneUri = FileUtils.getPersistableUriFromPath(mRingtonePath);
+            String uriName = FileUtils.getFileName(ringtoneUri);
             ringtoneName = uriName != null ? uriName : getString(R.string.ringtone_default);
         } else ringtoneName = getString(R.string.ringtone_default);
 
@@ -144,10 +145,20 @@ public class AlarmDetails extends BaseActivity implements TimePicker.OnTimeChang
 
 
     public void PickRingtone(View view) {
-        Intent goPickRingtone = new Intent(Intent.ACTION_OPEN_DOCUMENT, MediaStore.Audio.Media.EXTERNAL_CONTENT_URI);
-        goPickRingtone.putExtra(Intent.EXTRA_LOCAL_ONLY, true);
-        startActivityForResult(Intent.createChooser(goPickRingtone, getString(R.string.pick_ringtone)),
-                INTENT_PICK_RINGTONE_CODE);
+        Intent intent = new Intent();
+
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT) {
+            intent.setAction(Intent.ACTION_GET_CONTENT);
+        } else {
+            intent.setAction(Intent.ACTION_OPEN_DOCUMENT);
+            intent.addFlags(Intent.FLAG_GRANT_PERSISTABLE_URI_PERMISSION);
+        }
+        intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        intent.setType("audio/*");
+        // Extra to prevent selecting remote (undownloaded) files
+        intent.putExtra(Intent.EXTRA_LOCAL_ONLY, true);
+
+        startActivityForResult(intent, INTENT_PICK_RINGTONE_CODE);
     }
 
 
@@ -215,10 +226,12 @@ public class AlarmDetails extends BaseActivity implements TimePicker.OnTimeChang
             if (requestCode == INTENT_PICK_RINGTONE_CODE) {
                 if (intent != null && intent.getData() != null) {
                     Uri uri = intent.getData();
-                    mRingtonePath = uri.toString();
-                    mBinding.tvRingtone.setText(FileUtils.getFileName(uri));
-                } else
-                    Toast.makeText(this, R.string.not_valid_file, Toast.LENGTH_SHORT).show();
+                    if (FileUtils.isAudioUri(uri)) {
+                        mRingtonePath = uri.toString();
+                        mBinding.tvRingtone.setText(FileUtils.getFileName(uri));
+                    } else
+                        Toast.makeText(this, R.string.not_valid_file, Toast.LENGTH_SHORT).show();
+                }
             }
         }
     }

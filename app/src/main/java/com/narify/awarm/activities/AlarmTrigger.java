@@ -3,17 +3,18 @@ package com.narify.awarm.activities;
 import android.annotation.SuppressLint;
 import android.media.MediaPlayer;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.narify.awarm.models.Alarm;
-import com.narify.awarm.gestures.OnSwipeTouchListener;
 import com.narify.awarm.R;
 import com.narify.awarm.databinding.ActivityAlarmTriggerBinding;
+import com.narify.awarm.gestures.OnSwipeTouchListener;
+import com.narify.awarm.models.Alarm;
 import com.narify.awarm.utilities.AlarmUtils;
 import com.narify.awarm.utilities.DateTimeUtils;
+import com.narify.awarm.utilities.FileUtils;
 import com.narify.awarm.utilities.PreferenceUtils;
 import com.narify.awarm.utilities.TypeConverterUtils;
 
@@ -101,7 +102,6 @@ public class AlarmTrigger extends BaseActivity {
 
     }
 
-
     private void setClockAndLabelText() {
         String label = mAlarm.getLabel() != null ? mAlarm.getLabel() : "";
         LocalTime now = LocalTime.now();
@@ -113,8 +113,9 @@ public class AlarmTrigger extends BaseActivity {
 
     private void playRingtone() {
         try {
-            String ringtonePath = mAlarm.getRingtonePath();
-            mMediaPlayer = MediaPlayer.create(this, Uri.parse(ringtonePath));
+            Uri ringtoneUri = FileUtils.getPersistableUriFromPath(mAlarm.getRingtonePath());
+
+            mMediaPlayer = MediaPlayer.create(this, ringtoneUri);
             mMediaPlayer.setLooping(true);
             mMediaPlayer.start();
         } catch (Exception e) {
@@ -130,7 +131,8 @@ public class AlarmTrigger extends BaseActivity {
             mMediaPlayer.reset();
             mMediaPlayer.release();
         } finally {
-            finish();
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) finishAndRemoveTask();
+            else finish();
         }
     }
 

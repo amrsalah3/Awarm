@@ -54,7 +54,6 @@ public class AlarmUtils {
 
     private static PendingIntent createAlarmPendingIntent(Alarm alarm) {
         Intent alarmTriggerIntent = new Intent(AppContext.get(), AlarmTrigger.class);
-        alarmTriggerIntent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION | Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
         alarmTriggerIntent.putExtra(
                 AppContext.get().getString(R.string.key_pi_alarm_extra),
                 TypeConverterUtils.alarmToJson(alarm));

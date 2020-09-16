@@ -2,10 +2,10 @@
 <resources>
     <string-array name="repeat_options">
         <item>@string/repeat_never</item>
-        <item>@string/repeat_two_weeks</item>
-        <item>@string/repeat_three_weeks</item>
-        <item>@string/repeat_four_weeks</item>
-        <item>@string/repeat_weekly</item>
+        <item>@string/repeat_one_time</item>
+        <item>@string/repeat_two_times</item>
+        <item>@string/repeat_three_times</item>
+        <item>@string/repeat_forever</item>
 
     </string-array>
 

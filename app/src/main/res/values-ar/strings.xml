@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name" translatable="false">Awarm</string>
+    <string name="title_activity_settings">الإعدادات</string>
+
+    <!-- Days' checkboxes -->
+    <string name="sat">سبت</string>
+    <string name="sun">أحد</string>
+    <string name="mon">اثنين</string>
+    <string name="tue">ثلاثاء</string>
+    <string name="wed">أربعاء</string>
+    <string name="thu">خميس</string>
+    <string name="fri">جمعة</string>
+
+    <!-- Ringtone -->
+    <string name="ringtone">نغمة الرنين</string>
+    <string name="ringtone_default" translatable="false">Over The Horizon</string>
+    <string name="not_valid_file">ليس ملف صوتي سليم</string>
+
+    <!-- Repeat -->
+    <string name="repeat">تكرار المنبه</string>
+    <string name="repeat_never">أبداً (فقط هذا الأسبوع)</string>
+    <string name="repeat_one_time">مرة واحدة</string>
+    <string name="repeat_two_times">مرتين</string>
+    <string name="repeat_three_times">ثلاث مرات</string>
+    <string name="repeat_forever">دائماً</string>
+
+    <!-- Label -->
+    <string name="alarm_label">عنوان المنبه</string>
+    <string name="alarm_label_autofill_hints">المدرسة ,الكلية ,الجامعة ,العمل ,الصلاه ,الطعام ,الإفطار</string>
+
+    <!-- Preferences -->
+    <string name="key_pref_alarm_list" translatable="false">alarm_list</string>
+    <string name="key_pref_app_theme" translatable="false">app_theme</string>
+    <string name="key_pref_time_picker_mode" translatable="false">time_picker</string>
+    <string name="title_pref_app_theme">ثيم التطبيق</string>
+    <string name="title_pref_time_picker_mode">نوع شكل مختار الوقت</string>
+    <string name="summary_pref_theme">اختر ألوان التطبيق</string>
+    <string name="summary_pref_time_picker_mode">اختر نوع مختار الوقت على شكل ساعة ام دوارة</string>
+
+
+    <!-- Time Picker choices (entries and values) -->
+    <string name="Spinner">دوراة</string>
+    <string name="Clock">ساعة</string>
+
+    <!-- App Themes choices (entries and values) -->
+    <string name="Purple">بنفسجي</string>
+    <string name="Blue">أزرق</string>
+    <string name="Orange">برتقالي</string>
+    <string name="Black">أسود</string>
+
+    <!-- Intent keys -->
+    <string name="key_intent_alarm_extra" translatable="false">alarm</string>
+    <string name="key_intent_request_code" translatable="false">requestCode</string>
+    <string name="key_pi_alarm_extra" translatable="false">alarm</string>
+
+    <!-- Menu items -->
+    <string name="settings">@string/title_activity_settings</string>
+
+    <!-- Remaining time -->
+    <string name="alarm_remaining_time">الوقت المتبقي</string>
+    <string name="remaining_no_time_picked">اختر يوم وتوقيت</string>
+    <string name="remaining_day_hour_minute">باقي %s %s %s </string>
+    <plurals name="remaining_days">
+        <item quantity="zero"></item>
+        <item quantity="one">يوم و</item>
+        <item quantity="two">يومان و</item>
+        <item quantity="few">%d ايام و</item>
+        <item quantity="many">%d يوم و</item>
+    </plurals>
+    <plurals name="remaining_hours">
+        <item quantity="zero"></item>
+        <item quantity="one">ساعة و</item>
+        <item quantity="two">ساعتان و</item>
+        <item quantity="few">%d ساعات و</item>
+        <item quantity="many">%d ساعة و</item>
+    </plurals>
+    <plurals name="remaining_minutes">
+        <item quantity="zero">أقل من دقيقة</item>
+        <item quantity="one">دقيقة</item>
+        <item quantity="two">دقيقتان</item>
+        <item quantity="few">%d دقائق</item>
+        <item quantity="many">%d دقيقة</item>
+    </plurals>
+
+    <string name="contentDesc_delete_alarm">حذف المنبه</string>
+    <string name="select_atleast_one_day">اختر يوم واحد على الأقل</string>
+    <string name="swipe_up_to_dismiss">اسحب لفوق للإيقاف</string>
+
+    <!-- AlarmDetails save state bundle's keys -->
+    <string name="key_requestcode_savestate_alarmdetails" translatable="false">incoming_request_code</string>
+    <string name="key_uniquecode_savestate_alarmdetails" translatable="false">alarm_unique_code</string>
+    <string name="key_repeatid_savestate_alarmdetails" translatable="false">repeat_id</string>
+    <string name="key_ringtonepath_savestate_alarmdetails" translatable="false">ringtone_path</string>
+
+
+</resources>
