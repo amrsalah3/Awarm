@@ -1,6 +1,7 @@
 package com.narify.awarm.activities;
 
 import android.annotation.SuppressLint;
+import android.content.pm.ActivityInfo;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
@@ -34,6 +35,8 @@ public class AlarmTrigger extends BaseActivity {
         super.onCreate(savedInstanceState);
         mBinding = ActivityAlarmTriggerBinding.inflate(getLayoutInflater());
         setContentView(mBinding.getRoot());
+
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         turnAndKeepScreenOn();
 
