@@ -59,7 +59,7 @@ public class AlarmUtils {
                 TypeConverterUtils.alarmToJson(alarm));
 
         return PendingIntent.getActivity(AppContext.get(), alarm.getUniqueCode(),
-                alarmTriggerIntent, 0);
+                alarmTriggerIntent, PendingIntent.FLAG_UPDATE_CURRENT);
     }
 
     public static int createUniqueAlarmCode() {

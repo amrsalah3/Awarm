@@ -43,7 +43,7 @@ public class Alarm {
     }
 
     public void setActiveDays(boolean[] activeDays) {
-        this.activeDays = activeDays;
+        this.activeDays = Arrays.copyOf(activeDays, activeDays.length);
     }
 
     public int getHour() {
