@@ -130,7 +130,7 @@
                 android:layout_marginTop="@dimen/margin_small3"
                 android:background="?colorPrimaryVariant"
                 android:elevation="3dp"
-                android:onClick="PickRingtone"
+                android:onClick="pickRingtone"
                 android:saveEnabled="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.narify.awarm.models.Alarm;
 import com.narify.awarm.adapters.AlarmAdapter;
@@ -36,8 +37,9 @@ public class MainScreen extends BaseActivity implements
 
         PreferenceManager.getDefaultSharedPreferences(this)
                 .registerOnSharedPreferenceChangeListener(this);
-        //PreferenceUtils.clearAllData();
+
         initList();
+
         findViewById(R.id.fab_new_alarm).setOnClickListener(view -> openAlarmDetails(null));
     }
 

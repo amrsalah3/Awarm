@@ -2,6 +2,8 @@ package com.narify.awarm.activities;
 
 import android.annotation.SuppressLint;
 import android.content.pm.ActivityInfo;
+import android.media.AudioAttributes;
+import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
@@ -19,6 +21,7 @@ import com.narify.awarm.utilities.FileUtils;
 import com.narify.awarm.utilities.PreferenceUtils;
 import com.narify.awarm.utilities.TypeConverterUtils;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
@@ -115,17 +118,34 @@ public class AlarmTrigger extends BaseActivity {
     }
 
     private void playRingtone() {
+        Uri ringtoneUri;
         try {
-            Uri ringtoneUri = FileUtils.getPersistableUriFromPath(mAlarm.getRingtonePath());
-
-            mMediaPlayer = MediaPlayer.create(this, ringtoneUri);
-            mMediaPlayer.setLooping(true);
-            mMediaPlayer.start();
+            ringtoneUri = FileUtils.getPersistableUriFromPath(mAlarm.getRingtonePath());
+            setUpMediaPlayer(ringtoneUri);
         } catch (Exception e) {
-            mMediaPlayer = MediaPlayer.create(this, R.raw.overthehorizon);
-            mMediaPlayer.setLooping(true);
-            mMediaPlayer.start();
+            ringtoneUri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.overthehorizon);
+            try {
+                setUpMediaPlayer(ringtoneUri);
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
         }
+    }
+
+    private void setUpMediaPlayer(Uri ringtoneUri) throws IOException {
+        mMediaPlayer = new MediaPlayer();
+
+        mMediaPlayer.setDataSource(this, ringtoneUri);
+
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP)
+            mMediaPlayer.setAudioStreamType(AudioManager.STREAM_ALARM);
+        else
+            mMediaPlayer.setAudioAttributes(new AudioAttributes.Builder()
+                    .setUsage(AudioAttributes.USAGE_ALARM).build());
+
+        mMediaPlayer.setLooping(true);
+        mMediaPlayer.prepare();
+        mMediaPlayer.start();
     }
 
     public void dismissAlarm() {
