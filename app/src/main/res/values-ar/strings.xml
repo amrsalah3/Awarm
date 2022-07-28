@@ -3,6 +3,7 @@
 
     <string name="app_name" translatable="false">Awarm</string>
     <string name="title_activity_settings">الإعدادات</string>
+    <string name="title_activity_about">عن التطبيق</string>
 
     <!-- Days' checkboxes -->
     <string name="sat">سبت</string>
@@ -57,6 +58,7 @@
 
     <!-- Menu items -->
     <string name="settings">@string/title_activity_settings</string>
+    <string name="about">@string/title_activity_about</string>
 
     <!-- Remaining time -->
     <string name="alarm_remaining_time">الوقت المتبقي</string>
@@ -94,5 +96,11 @@
     <string name="key_repeatid_savestate_alarmdetails" translatable="false">repeat_id</string>
     <string name="key_ringtonepath_savestate_alarmdetails" translatable="false">ringtone_path</string>
 
+    <!-- About activity -->
+    <string name="about_developer">تم تطوير هذا التطبيق عن طريق عمرو صلاح الدين عبد الهادي.</string>
+    <string name="about_narify_apps_link">تطبيقات Narify على سوق جوجل بلاي:
+        \nhttps://play.google.com/store/apps/developer?id=Narify</string>
+    <string name="about_privacy_policy">سياسة الخصوصية:
+        \ngithub.com</string>
 
 </resources>
