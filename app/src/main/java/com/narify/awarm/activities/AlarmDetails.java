@@ -144,7 +144,7 @@ public class AlarmDetails extends BaseActivity implements TimePicker.OnTimeChang
     }
 
 
-    public void PickRingtone(View view) {
+    public void pickRingtone(View view) {
         Intent intent = new Intent();
 
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT) {
