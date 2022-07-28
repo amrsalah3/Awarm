@@ -36,7 +36,7 @@ public class MainScreen extends BaseActivity implements
 
         PreferenceManager.getDefaultSharedPreferences(this)
                 .registerOnSharedPreferenceChangeListener(this);
-        //PreferenceUtils.clearAllData();
+
         initList();
         findViewById(R.id.fab_new_alarm).setOnClickListener(view -> openAlarmDetails(null));
     }
@@ -121,9 +121,14 @@ public class MainScreen extends BaseActivity implements
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        Intent intent;
         switch (item.getItemId()) {
             case R.id.menu_settings_item:
-                Intent intent = new Intent(this, SettingsActivity.class);
+                intent = new Intent(this, SettingsActivity.class);
+                startActivity(intent);
+                return true;
+            case R.id.menu_about_item:
+                intent = new Intent(this, AboutActivity.class);
                 startActivity(intent);
                 return true;
             default:

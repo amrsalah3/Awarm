@@ -6,7 +6,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
-        android:name="com.narify.awarm.app.App"
+        android:name=".app.App"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
@@ -14,26 +14,23 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup">
-
-        <activity android:name="com.narify.awarm.activities.MainScreen">
+        <activity android:name=".activities.MainScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name="com.narify.awarm.activities.AlarmDetails" />
-
+        <activity android:name=".activities.AlarmDetails" />
         <activity
-            android:name="com.narify.awarm.activities.AlarmTrigger"
+            android:name=".activities.AlarmTrigger"
             android:launchMode="singleTop"
             android:theme="@style/AlarmTriggerTheme" />
-
         <activity
-            android:name="com.narify.awarm.activities.SettingsActivity"
+            android:name=".activities.SettingsActivity"
             android:label="@string/title_activity_settings"
-            android:parentActivityName="com.narify.awarm.activities.MainScreen" />
+            android:parentActivityName=".activities.MainScreen" />
+        <activity android:name=".activities.AboutActivity" />
 
     </application>
 

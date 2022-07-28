@@ -27,8 +27,7 @@ public class SettingsActivity extends BaseActivity implements
 
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-        if (key.equals(getString(R.string.key_pref_app_theme)))
-            recreate();
+        if (key.equals(getString(R.string.key_pref_app_theme))) recreate();
     }
 
     @Override
